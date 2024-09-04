@@ -4,9 +4,9 @@ export const Body = () => {
     const [newsData, setNewsData] = useState([]);
 
     useEffect(() => {
-        fetch('https://newsapi.org/v2/everything?q=tesla&from=2024-08-02&sortBy=publishedAt&apiKey=38a4e1049c1a4803b20ce65468bcb902')
+        fetch('https://api.currentsapi.services/v1/latest-news?apiKey=r-F0Ayl7zKqzmbjsvcS4j-RSfMrhY85SQQtGq6sRK2okADtK')   
             .then(response => response.json())
-            .then(data => setNewsData(data.articles)) // Access the articles array within the response
+            .then(data => setNewsData(data.news)) // Access the articles array within the response
             .catch(err => console.log(err));
     }, []);
 
@@ -18,19 +18,22 @@ export const Body = () => {
                 <h1 className="font-bold text-red-600">knowledge, <span className="text-black">and</span> entertainment</h1>
             </div>
             <div className="pt-16">
-                {newsData.slice(0, 1).map((item, index) => (
+                { Array.isArray(newsData)&& newsData.slice(0, 1).map((item, index) => (
                     <div key={index} className="flex items-center gap-11">
-                        <img src={item.urlToImage} alt="news" className="w-[600px]" />
+                        <img src={item.image} alt="news" className="w-[600px] rounded-[15px]" />
                         <div className="w-[800px]">
                             <div className="flex gap-11 py-8 font-semibold text-gray-400"><h3>{item.author}</h3>
-                                <h3>{item.publishedAt}</h3>
+                                <h3>{item.published}</h3>
                             </div>
                             <h1 className="font-bold text-2xl">{item.title}</h1>
-                            <p className="py-8 text-xl">{item.content}</p>
-                            <a href="#">
+                            <p className="py-8 text-xl">{item.description}</p>
+                            <a href={item.url}>
                                 <button className="float-right bg-red-600 w-[100px] h-[40px] text-white font-semibold hover:bg-red-400">Read More</button>
                             </a>
-                            <p className="text-red-600 font-semibold">2 min read</p>
+                            <div className="flex gap-9 font-semibold">
+                            <p className="text-gray-500 ">{item.category}</p>
+                            <p className="text-red-600">2 min read</p>
+                            </div>
                         </div>
                     </div>
                 ))}
