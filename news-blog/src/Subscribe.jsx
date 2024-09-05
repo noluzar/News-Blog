@@ -2,7 +2,7 @@
 
 export const Subscribe = () => {
   return (
-    <div className="flex bg-gray-200 w-[80vw] h-[20vh] items-center justify-between mx-[190px] rounded">
+    <div className="flex bg-gray-100 w-[80vw] h-[20vh] items-center mx-[190px] justify-between rounded-xl">
         <div className="flex flex-col mx-11 items-start space-y-2">
             <h3>GET FIRST UPDATE</h3>
             <p className="font-bold text-3xl">Get the news in front line by</p>

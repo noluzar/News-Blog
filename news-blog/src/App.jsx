@@ -3,6 +3,7 @@ import { Body } from "./body"
 import EditorsPick from "./EditorsPick"
 import LatestArt from "./LatestNews"
 import { Subscribe } from "./Subscribe"
+import { Social } from "./assets/Social"
 
 function App(){
   return(
@@ -12,6 +13,7 @@ function App(){
     <LatestArt />
     <EditorsPick />
     <Subscribe />
+    <Social />
     </>
   )
 }

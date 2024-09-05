@@ -7,10 +7,10 @@ export const Navbar = () => {
             <nav className="flex justify-between px-[200px] pt-11">
                 <div className="font-bold text-3xl text-red-600">Buletin.</div>
                 <ul className="flex gap-11 font-bold cursor-pointer ">
-                    <li className="hover:underline"><a href="#">Stories</a></li>
-                    <li className="hover:underline"><a href="#">Creator</a></li>
-                    <li className="hover:underline"><a href="#">Community</a></li>
-                    <li className="hover:underline"><a href="#">Subscribe</a></li>
+                    <li className="hover:text-red-600"><a href="#">Stories</a></li>
+                    <li className="hover:text-red-600"><a href="#">Creator</a></li>
+                    <li className="hover:text-red-600"><a href="#">Community</a></li>
+                    <li className="hover:text-red-600"><a href="#">Subscribe</a></li>
                 </ul>
                 <div className="flex gap-11">
                     <div className="flex gap-2">

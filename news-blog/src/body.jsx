@@ -20,19 +20,19 @@ export const Body = () => {
             <div className="pt-16">
                 { Array.isArray(newsData)&& newsData.slice(0, 1).map((item, index) => (
                     <div key={index} className="flex items-center gap-11">
-                        <img src={item.image} alt="news" className="w-[600px] rounded-[15px]" />
+                        <img src={item.image} alt="news" className="w-[600px] rounded-[15px] h-[450px]" />
                         <div className="w-[800px]">
-                            <div className="flex gap-11 py-8 font-semibold text-gray-400"><h3>{item.author}</h3>
-                                <h3>{item.published}</h3>
+                            <div className="flex gap-11 py-8 font-semibold text-gray-400 text-xl"><h3>{item.author}</h3>
+                                <h3 className="text-xl">{item.published}</h3>
                             </div>
-                            <h1 className="font-bold text-2xl">{item.title}</h1>
+                            <h1 className="font-bold text-5xl">{item.title}</h1>
                             <p className="py-8 text-xl">{item.description}</p>
                             <a href={item.url}>
                                 <button className="float-right bg-red-600 w-[100px] h-[40px] text-white font-semibold hover:bg-red-400">Read More</button>
                             </a>
                             <div className="flex gap-9 font-semibold">
-                            <p className="text-gray-500 ">{item.category}</p>
-                            <p className="text-red-600">2 min read</p>
+                            <p className="text-gray-500 text-lg">{item.category}</p>
+                            <p className="text-red-600 text-lg">2 min read</p>
                             </div>
                         </div>
                     </div>

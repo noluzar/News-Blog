@@ -65,7 +65,7 @@ const EditorsPick = () => {
                                     className="w-full h-full object-cover"
                                 />
                                 <div className="absolute inset-0 flex flex-col items-center py-72 px-4 bg-black/60 text-white">
-                                    <h1 className="text-2xl font-bold text-left my-2">{item.title}</h1>
+                                    <h1 className="text-2xl font-bold">{item.title}</h1>
                                     <h1 className="text-sm ">{item.published}</h1>
                                 </div>
                             </div>
@@ -76,17 +76,20 @@ const EditorsPick = () => {
             <div className="mx-auto container">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                     {Array.isArray(data) && data.slice(0, 4).map((item, index) => (
-                        <div key={index} className="relative h-[400px] bg-white rounded-md mt-20">
+                        <div key={index} className="relative h-[500px] bg-white rounded-md mt-20">
                             <img
                                 src={item.image}
                                 alt={`Image ${index}`}
-                                className="w-full h-[200px] object-cover mb-4 rounded-md"
+                                className="w-full h-[300px] object-cover mb-4 rounded-3xl"
                             />
                             <div className="px-2">
-                                <h1 className="font-md font-bold py-2">{item.title.substring(0,100) + "..."}</h1>
+                                <h1 className="text-xl font-bold py-2">{item.title.substring(0,100) + "..."}</h1>
                                 <a href={item.url} className="text-red-600 hover:text-red-400 hover:underline">Read More</a>
                             </div>
+                            <div className='flex'>
                             <p className="text-gray-500 mx-2 font-semibold">{item.category[0].charAt(0).toUpperCase() + item.category[0].slice(1)}</p>
+                            <p className='text--500'>8 min read</p>
+                        </div>
                         </div>
                     ))}
                 </div>
